@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Polybius
 
-## Getting Started
+**A democratic health index, powered by political science**
 
-First, run the development server:
+Polybius is an experimental tool that generates a score for how well a political system is adhering to democratic principles. It's named after the ancient Greek historian who first theorized checks and balances in his analysis of the Roman Republic.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> ⚠️ **This project is under active development.** Expect rough edges, evolving methodology, and breaking changes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What It Does
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Polybius pulls live news, reports, and polling data via Anthropic's API, then analyzes them across ten factors:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Factor | What it measures |
+|--------|------------------|
+| **Judicial Independence** | Can courts check executive power? |
+| **Federalism / Regional Resistance** | Are subnational governments pushing back? |
+| **Political Competition** | Is meaningful opposition possible? |
+| **Media Capture** | Who controls the information environment? |
+| **Civil Society** | How dense and free are non-state organizations? |
+| **Public Opinion** | What does the public actually support? |
+| **Mobilizational Balance** | Can the opposition mobilize as effectively as the regime? |
+| **State Capacity** | What coercive and bureaucratic power can the regime deploy? |
+| **Corporate Compliance** | Are business elites resisting or accommodating? |
+| **Election Interference** | Is the electoral process being manipulated? |
 
-## Learn More
+## Theoretical Models
 
-To learn more about Next.js, take a look at the following resources:
+Rather than relying on a single framework, Polybius runs the data through **eleven different theoretical models** drawn from political science and historiography—each weighing the factors differently.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A few examples:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Tocquevillean** — emphasizes civil society and associational life
+- **Marxian** — focuses on capital-labor relations and class dynamics
+- **Linzian** — looks at regime type transitions and democratic breakdown patterns
 
-## Deploy on Vercel
+The full list of models and their weightings is available in [MODELS.md](./docs/MODELS.md).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Historical Analogies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Polybius draws on data from [V-Dem](https://v-dem.net/), the [Polity Project](https://www.systemicpeace.org/polityproject.html), and [Freedom House](https://freedomhouse.org/) to surface historical parallels—moments when other democracies faced similar conditions.
+
+## Social Signals
+
+A real-time module that assesses the current state of play:
+
+- **Party coordination** — how unified is the regime's political coalition?
+- **Media alignment** — are major outlets and figures supporting or resisting?
+- **Market constraints** — is capital acting as a brake on executive action?
+
+## Tech Stack
+
+Built with [Next.js](https://nextjs.org/). Setup instructions are in [SETUP.md](./docs/SETUP.md).
+
+## Contributing
+
+This is a research project in progress, and contributions are welcome—especially from people with backgrounds in political science, democratic theory, or data journalism. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to get involved.
+
+## License
+
+[MIT](./LICENSE)
